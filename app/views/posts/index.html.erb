@@ -1,0 +1,13 @@
+<div>
+  <h1>Lists of all posts</h1>
+  <%if @posts.present? %>
+  	<%@posts.each do |post|%>
+    <turbo-frame id="post_<%=post.id %>">
+  		<%= render 'posts/post', post: post %></br>
+    </turbo-frame> 
+  	<%end%>
+  <%else%>
+    <h1 style="display: flex; justify-content: center;">There is no post created yet</h1>
+  <%end%>
+</div>
+  <%=button_to "New Post", new_post_path, method: :get%>

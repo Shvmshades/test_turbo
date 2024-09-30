@@ -1,0 +1,5 @@
+<turbo-frame id="post_<%= @post.id%>">
+	Title: <%= @post.title%></br>
+	description: <%= @post.description%>
+</turbo-frame>
+<%= button_to 'Posts', posts_path, method: :get%>
